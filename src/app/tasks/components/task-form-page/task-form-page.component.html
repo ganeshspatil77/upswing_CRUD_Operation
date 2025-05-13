@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="task-form">
+  <input formControlName="title" placeholder="Task Title">
+  <select formControlName="status">
+    <option value="ToDo">To Do</option>
+    <option value="InProgress">In Progress</option>
+    <option value="Done">Done</option>
+  </select>
+  <button type="submit">Add</button>
+</form>
+
+
+<!-- <app-task-list-page></app-task-list-page> -->
