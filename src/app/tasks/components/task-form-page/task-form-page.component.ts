@@ -18,7 +18,8 @@ export class TaskFormPageComponent {
   constructor(private fb: FormBuilder, private store: TasksStore, private router: Router) {
     this.form = this.fb.group({
       title: ['', Validators.required],
-      status: ['InProgress']
+      status: ['InProgress'],
+      createdAt: [this.getTodayDateString(), Validators.required]
     });
     this.selectedTask = this.store.selectedTask;
 
@@ -31,35 +32,29 @@ export class TaskFormPageComponent {
   }
 
 
-  ngOnInit() {
-
-  }
-
-  upldate() {
-
-  }
-
-
 
   onSubmit() {
     if (this.form.valid) {
-      // const { title, status } = this.form.value;
-      // this.store.addTask(title!, status!);
-      // this.form.reset({ title: '', status: 'InProgress' });
-      // this.router.navigate(['tasks-list']);
-
+ 
       const editing = this.selectedTask();
-      const { title, status } = this.form.value;
+      const { title, status, createdAt } = this.form.value;
       if (editing) {
-        this.store.updateTask({ ...editing, title: title!, status: status! });
+        this.store.updateTask({ ...editing, title: title!, status: status!, createdAt:createdAt! });
         this.form.reset({ title: '', status: 'InProgress' });
         this.router.navigate(['tasks-list']);
       } else {
-        this.store.addTask(title!, status!);
+        this.store.addTask(title!, status!,  createdAt!);
         this.form.reset({ title: '', status: 'InProgress' });
         this.router.navigate(['tasks-list']);
       }
     }
   }
+
+  getTodayDateString(): string {
+  const today = new Date();
+  const offset = today.getTimezoneOffset();
+  const localDate = new Date(today.getTime() - offset * 60 * 1000);
+  return localDate.toISOString().substring(0, 10);
+}
 
 }

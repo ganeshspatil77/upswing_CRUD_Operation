@@ -24,12 +24,12 @@ export class TasksStore {
     this._tasks().filter(t => t.status === 'ToDo').length
   );
 
-  addTask(title: string, status: Task['status']) {
+  addTask(title: string, status: Task['status'],  createdAt: Date) {
     const task: Task = {
       id: uuid(),
       title,
       status,
-      createdAt: new Date()
+      createdAt
     };
     console.log('task', task);
 
@@ -61,7 +61,7 @@ export class TasksStore {
     const map = new Map<string, number>();
     for (const task of this._tasks()) {
       if (task.createdAt) {
-        const day = task.createdAt.toISOString().split('T')[0]; // YYYY-MM-DD
+        const day = new Date(task.createdAt).toISOString().split('T')[0]; // YYYY-MM-DD
         map.set(day, (map.get(day) || 0) + 1);
       }
 

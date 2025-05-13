@@ -16,8 +16,8 @@
               <td>{{ task.title }}</td>
               <td>{{ task.status }}</td>
               <td>
-                <button class="btn btn-sm btn-primary" (click)="updateTask(task)">Edit</button>
-                <button class="btn btn-sm btn-danger" (click)="deletaTask(task.id)">Delete</button>
+                <button class="btn btn-sm btn-warning px-2 py-1 me-2" (click)="updateTask(task)">Edit</button>
+                <button class="btn btn-sm btn-danger px-2 py-1" (click)="deletaTask(task.id)">Delete</button>
               </td>
             </tr>
           </tbody>
