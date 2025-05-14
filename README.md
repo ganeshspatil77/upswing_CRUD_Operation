@@ -16,4 +16,4 @@ AppModule: Root module that assembles the feature modules and bootstraps the app
 
 ## Any trade‑offs or alternative approaches you considered
 
-- Using a single store for all modules instead of a separate store for each module.
+- An alternative to NgRx is using Angular’s built-in signal, computed, and effect APIs directly within a service as a reactive state container, or using ComponentStore from NgRx for a lightweight, scoped state management solution
