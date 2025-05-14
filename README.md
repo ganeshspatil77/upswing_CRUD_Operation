@@ -1,59 +1,19 @@
-# UpswingTask
+## How did you organise the modules and your signal store
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+SharedModule: Contains reusable modules and utilities like ReactiveFormsModule, CommonModule, and shared models.
 
-## Development server
+TasksModule / ProductsModule: Feature modules encapsulating UI components, logic, and store related to a specific domain (e.g., tasks or products).
 
-To start a local development server, run:
+AppModule: Root module that assembles the feature modules and bootstraps the application.
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## certain patterns you used
+- Effects: Used to perform side effects like fetching data from the server or updating the store.
+- Signals: Used to manage state and trigger updates to the UI.
+- Routing: Used to navigate between different pages and components.
+- Forms: Used to manage form inputs and validation.
+- NgRx: Used to manage state and side effects in a centralized way.
 
-## Code scaffolding
+## Any trade‑offs or alternative approaches you considered
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Using a single store for all modules instead of a separate store for each module.
