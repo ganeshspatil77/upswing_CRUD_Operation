@@ -26,7 +26,7 @@ export class TaskFormPageComponent {
     effect(() => {
       const task = this.selectedTask(); // must call the signal
       if (task) {
-        this.form.setValue({ title: task.title, status: task.status });
+        this.form.setValue({ title: task.title, status: task.status, createdAt:task.createdAt });
       }
     });
   }

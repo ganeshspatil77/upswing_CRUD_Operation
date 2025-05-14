@@ -1,8 +1,8 @@
 ## How did you organise the modules and your signal store
 
-SharedModule: Contains reusable modules and utilities like ReactiveFormsModule, CommonModule, and shared models.
+TasksModule : Feature modules encapsulating UI components, logic, and store related to a specific domain. Contains reusable modules and utilities and routing.
 
-TasksModule / ProductsModule: Feature modules encapsulating UI components, logic, and store related to a specific domain (e.g., tasks or products).
+store: Signal store that manages the state of the application.
 
 AppModule: Root module that assembles the feature modules and bootstraps the application.
 

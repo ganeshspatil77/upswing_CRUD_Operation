@@ -72,7 +72,6 @@ export class TasksStore {
 
   selectTask(task: Task) {
     this._selectedTask.update(() => task);
-    console.log('===...', this.selectedTask);
 
   }
 
