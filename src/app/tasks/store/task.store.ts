@@ -1,7 +1,6 @@
 import { Injectable, computed, signal } from '@angular/core';
 import { v4 as uuid } from 'uuid';
 import { Task } from '../interfaces/task.interface';
-import { Route } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class TasksStore {
@@ -31,7 +30,6 @@ export class TasksStore {
       status,
       createdAt
     };
-    console.log('task', task);
 
     this._tasks.update(tasks => [...tasks, task]);
   }
@@ -52,7 +50,6 @@ export class TasksStore {
       const day = task.createdAt.toISOString().split('T')[0];
       counts[day] = (counts[day] || 0) + 1;
     });
-    console.log(counts);
     
     return counts;
   });
