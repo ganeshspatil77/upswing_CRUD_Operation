@@ -12,8 +12,3 @@ AppModule: Root module that assembles the feature modules and bootstraps the app
 - Signals: Used to manage state and trigger updates to the UI.
 - Routing: Used to navigate between different pages and components.
 - Forms: Used to manage form inputs and validation.
-- NgRx: Used to manage state and side effects in a centralized way.
-
-## Any trade‑offs or alternative approaches you considered
-
-- An alternative to NgRx is using Angular’s built-in signal, computed, and effect APIs directly within a service as a reactive state container, or using ComponentStore from NgRx for a lightweight, scoped state management solution
