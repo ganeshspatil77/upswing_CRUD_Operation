@@ -66,7 +66,6 @@ export class TasksStore {
       }
 
     }
-
     return Array.from(map.entries()).sort((a, b) => a[0].localeCompare(b[0]));
   });
 
